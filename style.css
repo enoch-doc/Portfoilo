@@ -1,0 +1,266 @@
+/* ===== Global Reset ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    background: #f9f9f9;
+    scroll-behavior: smooth;
+    transition: background 0.3s, color 0.3s;
+}
+
+body.dark {
+    background: #121212;
+    color: #f1f1f1;
+}
+
+/* ===== Dark Mode Toggle ===== */
+#darkModeToggle {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    background: #fff;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 2000;
+    font-size: 1.2rem;
+}
+body.dark #darkModeToggle {
+    background: #333;
+    color: #fff;
+}
+
+/* ===== Particle Background ===== */
+#particles {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: -1;
+}
+
+/* ===== Header & Navigation ===== */
+header {
+    background: rgba(0,0,0,0.85);
+    color: #fff;
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+}
+nav ul li {
+    margin-left: 1.5rem;
+}
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+nav ul li a:hover {
+    color: #00f2fe;
+}
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.logo span {
+    color: #00f2fe;
+}
+
+/* ===== Hero Section ===== */
+#hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 1rem;
+}
+.hero-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+.hero-content p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+.btn {
+    background: linear-gradient(to right, #4facfe, #00f2fe);
+    color: white;
+    padding: 0.7rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+.btn:hover {
+    background: linear-gradient(to right, #00f2fe, #4facfe);
+    transform: translateY(-2px);
+}
+
+/* ===== About Section ===== */
+#about {
+    padding: 5rem 2rem;
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+}
+#about h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* ===== Skills Section ===== */
+#skills {
+    padding: 5rem 2rem;
+    max-width: 900px;
+    margin: auto;
+}
+.skills-container {
+    margin-top: 2rem;
+}
+.skill-bar {
+    margin-bottom: 1rem;
+}
+.skill-bar p {
+    margin-bottom: 0.3rem;
+}
+.bar {
+    background: #ddd;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.bar span {
+    display: block;
+    height: 10px;
+    background: linear-gradient(to right, #4facfe, #00f2fe);
+}
+
+/* ===== Projects Section ===== */
+#projects {
+    padding: 5rem 2rem;
+    max-width: 1200px;
+    margin: auto;
+}
+#projects h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    position: relative;
+}
+#projects h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(to right, #4facfe, #00f2fe);
+    margin: 0.5rem auto 0;
+    border-radius: 2px;
+}
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+.project-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.project-card h3 {
+    font-size: 1.4rem;
+    margin: 1rem;
+    color: #333;
+}
+.project-card p {
+    flex-grow: 1;
+    margin: 0 1rem 1rem;
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+.project-card a {
+    display: inline-block;
+    margin: 0.5rem 1rem 1rem;
+    padding: 0.5rem 1rem;
+    background: linear-gradient(to right, #4facfe, #00f2fe);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+.project-card a:hover {
+    background: linear-gradient(to right, #00f2fe, #4facfe);
+    transform: translateY(-2px);
+}
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+body.dark .project-card {
+    background: #1e1e1e;
+}
+body.dark .project-card h3 {
+    color: #f1f1f1;
+}
+body.dark .project-card p {
+    color: #ccc;
+}
+
+/* ===== Contact Section ===== */
+#contact {
+    padding: 5rem 2rem;
+    text-align: center;
+}
+#contact a {
+    color: #00f2fe;
+    text-decoration: none;
+}
+#contact a:hover {
+    text-decoration: underline;
+}
+
+/* ===== Footer ===== */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #222;
+    color: #fff;
+}
+
+/* ===== Scroll Animation ===== */
+.fade-in-delay,
+.fade-in-delay2 {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.appear {
+    opacity: 1;
+    transform: translateY(0);
+}
